@@ -20,7 +20,7 @@ class PostController extends Controller
             [
                 'name' => 'required|string',
                 'content' => 'required|string',
-                'post_id' => 'numeric|exists:Post,id'
+                'post_id' => 'numeric|exists:posts,id'
             ]
         );
         if($validator->fails()){
