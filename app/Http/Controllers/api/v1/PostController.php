@@ -37,7 +37,7 @@ class PostController extends Controller
                 'id' => $id
             ],
             [
-                'id' => 'required|exists:Posts,id|numeric'
+                'id' => 'required|exists:posts,id|numeric'
             ]
         );
         if($validator->fails()){
@@ -59,7 +59,7 @@ class PostController extends Controller
         $validator = Validator::make(
             $data,
             [
-                'id' => 'required|exists:Posts,id|numeric',
+                'id' => 'required|exists:posts,id|numeric',
                 'name' => 'required|string',
                 'content' => 'required|string'
             ]
@@ -89,7 +89,7 @@ class PostController extends Controller
         $validator = Validator::make(
             $data,
             [
-                'id' => 'required|exists:Posts,id|numeric',
+                'id' => 'required|exists:posts,id|numeric',
                 'name' => 'required|string'
             ]
         );
@@ -124,7 +124,7 @@ class PostController extends Controller
             [
                 'name' => 'required|string',
                 'content' => 'required|string',
-                'post_id' => 'required|numeric|exists:Posts,id'
+                'post_id' => 'required|numeric|exists:posts,id'
             ]
         );
         if($validator->fails()){
